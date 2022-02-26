@@ -16,9 +16,28 @@
             </h1>
             <br />
             <!-- Quiz instructions/rules should appear below -->
-            <p>
-                Click the button below to start the quiz. Once the quiz has started, a timer will begin counting down. Each wrong answer deducts 5 seconds from the timer. If the timer reaches 0, the quiz is over and you lose. Your final score will be the time you have left remaining after you finish all of the questions. GOOD LUCK!
-            </p>
+            <ol class="rules">
+                <li>
+                    Click the button below to start the quiz.
+                </li>
+                <li>
+                    Once the quiz has started, a timer will begin counting down.
+                </li>
+                <li>
+                    Each wrong answer deducts 5 seconds from the timer.
+                </li>
+                <li>
+                    If the timer reaches 0, the quiz is over and you lose.
+                </li>
+                <li>
+                    Your final score will be the time you have left remaining after you finish all of the questions.
+                </li>
+                <li>
+                    GOOD LUCK!
+                </li>
+            </ol>
+                    
+            
 
         </header>
         <!-- Button to begin the coding quiz -->
@@ -29,7 +48,20 @@
         <!-- Quiz Container or Box -->
         
         <div class="quiz">
-
+            <section class="quiz-header">
+              <div class="timer">
+                  <div class="time-text">Time Left:</div>
+                  <div class="timer-seconds">60</div>
+              </div>  
+            </section>
+            <section>
+                <div class="q-text">
+                    <span>Which of the following is a correct way to link a stylesheet to an HTML doucment?</span>
+                </div>
+                <div class="answer-list">
+                    
+                </div>
+            </section>
         </div>
 
          <script src="./assets/js/script.js"></script>

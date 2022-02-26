@@ -8,6 +8,25 @@
 body {
     background: burlywood; 
 }
+
+.heading {
+    position: relative;
+    left: 40%;
+}
+
+.rules {
+    position: absolute;
+    left: 50%;
+}
+
+.timer {
+    font-weight: bold;
+    font-size: 20px;
+    position: absolute;
+    top: 20%;
+    left: 30%;
+}    
+
 /* begin button positioning*/
 
 .begin-button {
