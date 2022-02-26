@@ -1,0 +1,34 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif; 
+}
+
+body {
+    background: burlywood; 
+}
+/* begin button positioning*/
+
+.begin-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform:(-50% , -50%);
+}    
+
+/* Button Styling */
+.begin-button button {
+    font-size: 30px;
+    font-weight: 450;
+    color: peru;
+    outline: none;
+    border: none;
+    padding: 20px 20px;
+    border-radius: 10px;
+}
+.begin-button button:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+/* End of Button Styling */

@@ -14,33 +14,24 @@
             <h1 id="main-heading" class="heading">
                 What Do You Know About Coding? Quiz
             </h1>
+            <br />
+            <!-- Quiz instructions/rules should appear below -->
             <p>
-                Click the button below the form to start the quiz. Once the quiz has started, a timer will begin counting down. Each wrong answer deducts 5 seconds from the timer. If the timer reaches 0, the quiz is over and you lose. Your final score will be the time you have left remaining after you finish all of the questions. GOOD LUCK!
+                Click the button below to start the quiz. Once the quiz has started, a timer will begin counting down. Each wrong answer deducts 5 seconds from the timer. If the timer reaches 0, the quiz is over and you lose. Your final score will be the time you have left remaining after you finish all of the questions. GOOD LUCK!
             </p>
 
         </header>
+        <!-- Button to begin the coding quiz -->
+        <div class="begin-button">
+            <button>Begin Coding Quiz</button>
+        </div>
 
-        <form id="quiz-form" class="form">
-            <div class="form">
-                <input type="text" name="your-initials" placeholder="Enter Your Initials" />
-            </div>
-            <div class="form" id="main-quiz-questions">
-                <select name="choose-answer" class="answer-dropdown">
-                    <option value="" disabled selected>Pick an answer</option>
-                    <option value="A">A</option>
-                    <option value="B">B</option>
-                    <option value="C">C</option>
-                    <option value="D">D</option>
-                </select>
-            </div>
-            <div class="form">
+        <!-- Quiz Container or Box -->
+        
+        <div class="quiz">
 
-                <button class="btn" id="save-answer" type="submit">Submit Answer</button>
-            </div>
-        </form>
+        </div>
 
-        <main class="question-content" id="questions">
-            
-        </main>
+         <script src="./assets/js/script.js"></script>
     </body>
 </html>
