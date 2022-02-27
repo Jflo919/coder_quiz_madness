@@ -24,9 +24,55 @@ body {
     font-size: 20px;
     position: absolute;
     top: 20%;
-    left: 30%;
+    left: 80%;
+    
 }    
+/* styling for the quiz container itself*/
 
+.quiz {
+    width: 650px;
+    background: white;
+    border-radius:2px;
+    position: absolute;
+    top:60%;
+    left: 50%;
+    height: 400px;
+    padding-bottom: 20px; 
+    margin-bottom: 20px;
+}
+
+.quiz .timer {
+    background: gray;
+}
+
+.quiz .q-text {
+    font-weight: bold;
+    padding-bottom: 5px;
+    border-bottom: solid 3px gray;
+}
+.answer-list {
+    font-weight: bold;
+    margin-top: 20%; 
+    margin-left:10%;
+}
+
+.answer {
+     padding: 5px;
+}
+/*  styling for the ABCD choice buttons  */
+
+.answer .choice {
+    font-weight: bold;
+    padding: 5px 5px;
+}
+
+.answer .choice:hover {
+    cursor: pointer;
+}
+
+ footer .total {
+    margin-top: 5%;
+}
 /* begin button positioning*/
 
 .begin-button {
