@@ -74,8 +74,9 @@ body {
     padding: 5px 5px;
 }
 
-.answer .choice:hover {
+.answer:hover {
     cursor: pointer;
+    background-color: yellow;
 }
 
  footer .total {

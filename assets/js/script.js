@@ -9,12 +9,12 @@ var questions = [
     {
         number: 1,
         question: "Which of the following is a correct way to link a stylesheet to an HTML doucment?",
-        answer: document.getElementById("#A"),
+        answer: "&lt;link rel='stylesheet' href='assets/css/style.css' /&gt;",
         options: [
-            "<link rel='stylesheet' href='assets/css/style.css' />",
+            "&lt;link rel='stylesheet' href='assets/css/style.css' /&gt;",
             "link rel='stylesheet' href='assets/css/style.css",
-            "<link mel=somethingoranother hef='assets/css/style.css/>'",
-            "<link rel='stylesheet' href=assets/css/style/>"
+            "&lt;link mel=somethingoranother hef='assets/css/style.css' /&gt;",
+            "&lt;link rel='stylesheet' href=assets/css/style/&gt;"
         ]
     },
     {
@@ -68,5 +68,27 @@ var questions = [
 // conditional for if begin quiz button is selected
 
 beginBtn.onclick = ()=>{
+    // Displays hiddent quiz on click
     quiz.classList.add("active");
+    displayQuestions(3);
+}
+
+var questionNumber = 0;
+
+// when an answer option is clicked on
+var next = quiz.querySelector(".answer");
+
+// obtaining questions and options from the above array?
+
+function displayQuestions(index) {
+    var questionText = document.querySelector(".q-text");
+    var answerList = document.querySelector(".answer-list");
+    var questionQuestion =  "<span>" + questions[index].question + "</span>";
+    var answerOptions = '<div class="answer">' + questions[index].options[0] +'<span></span></div>' 
+        + '<div class="answer">' + questions[index].options[1] +'<span></span></div>' 
+        + '<div class="answer">' + questions[index].options[2] +'<span></span></div>' 
+        + '<div class="answer">' + questions[index].options[3] +'<span></span></div>';
+    
+    questionText.innerHTML = questionQuestion;
+    answerList.innerHTML = answerOptions;
 }
