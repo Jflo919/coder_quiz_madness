@@ -1,9 +1,10 @@
 //get elements for quiz app
 
 var beginBtn = document.querySelector(".begin-button button");
+
 var quiz = document.querySelector(".quiz");
 var answerBtn = document.querySelector(".choice");
-
+var timrCount = quiz.querySelector(".timer .time-text .timer-seconds");
 // array and passing the quiz questions, answers/options, etc...
 var questions = [
     {
@@ -71,10 +72,11 @@ beginBtn.onclick = ()=>{
     // Displays hiddent quiz on click
     quiz.classList.add("active");
     displayQuestions(0);
+    beginTimer(60);
 }
 
 var questionNumber = 0;
-
+var counting;
 // when an answer option is clicked on
 var next = quiz.querySelector(".answer-list");
 next.onclick = ()=>{
@@ -114,4 +116,12 @@ function answerSelected(answer){
         console.log("incorrect");
         // once timer is created with setInterval the code for subtracting time on incorrect should go here
     }
+}
+
+function beginTimer(time) {
+     counting = setInterval(timer, 1000);
+     function timer() {
+         time = 60;
+         time--;
+     }
 }
