@@ -98,7 +98,7 @@ function displayQuestions(index) {
     questionText.innerHTML = questionQuestion;
     answerList.innerHTML = answerOptions;
     var answerSelections = answerList.querySelectorAll(".answer");
-    for (let i = 0; i < answerSelections.length; i++) {
+    for (var i = 0; i < answerSelections.length; i++) {
         // updates the value of the answerSelections onclick at a given index, and answerSelections is equal all of the.answer in answerList
         answerSelections[i].setAttribute("onclick", "answerSelected(this)");
     }
