@@ -8,13 +8,13 @@ var answerBtn = document.querySelector(".choice");
 var questions = [
     {
         number: 1,
-        question: "Which of the following is a correct way to link a stylesheet to an HTML doucment?",
-        answer: "&lt;link rel='stylesheet' href='assets/css/style.css' /&gt;",
+        question: "What does the command mkdir do?",
+        answer: "It creates a new directory (folder) in the current location",
         options: [
-            "&lt;link rel='stylesheet' href='assets/css/style.css' /&gt;",
-            "link rel='stylesheet' href='assets/css/style.css",
-            "&lt;link mel=somethingoranother hef='assets/css/style.css' /&gt;",
-            "&lt;link rel='stylesheet' href=assets/css/style/&gt;"
+            "It creates a new directory (folder) in the current location",
+            "links your css to your html",
+            "It deletes the current directory (folder)",
+            "I don't know, but I'll tell you what I DO KNOW, these questions are not hard."
         ]
     },
     {
@@ -70,20 +70,26 @@ var questions = [
 beginBtn.onclick = ()=>{
     // Displays hiddent quiz on click
     quiz.classList.add("active");
-    displayQuestions(3);
+    displayQuestions(0);
 }
 
 var questionNumber = 0;
 
 // when an answer option is clicked on
-var next = quiz.querySelector(".answer");
+var next = quiz.querySelector(".answer-list");
+next.onclick = ()=>{
+    if (questionNumber < questions.length - 1) {
+        questionNumber++;
+        displayQuestions(questionNumber);
+    }
+}
 
 // obtaining questions and options from the above array?
 
 function displayQuestions(index) {
     var questionText = document.querySelector(".q-text");
     var answerList = document.querySelector(".answer-list");
-    var questionQuestion =  "<span>" + questions[index].question + "</span>";
+    var questionQuestion =  "<span>" + questions[index].number + "." + questions[index].question + "</span>";
     var answerOptions = '<div class="answer">' + questions[index].options[0] +'<span></span></div>' 
         + '<div class="answer">' + questions[index].options[1] +'<span></span></div>' 
         + '<div class="answer">' + questions[index].options[2] +'<span></span></div>' 
@@ -91,4 +97,21 @@ function displayQuestions(index) {
     
     questionText.innerHTML = questionQuestion;
     answerList.innerHTML = answerOptions;
+    var answerSelections = answerList.querySelectorAll(".answer");
+    for (let i = 0; i < answerSelections.length; i++) {
+        // updates the value of the answerSelections onclick at a given index, and answerSelections is equal all of the.answer in answerList
+        answerSelections[i].setAttribute("onclick", "answerSelected(this)");
+    }
+}
+// console logging which option is clicked on in browser, creating a var for the correct answer which is part of the array
+function answerSelected(answer){
+    var userAnswer = answer.textContent;
+    var correctAnswer = questions[questionNumber].answer; 
+    if (userAnswer == correctAnswer) {
+        console.log("correct");
+    }
+    if (userAnswer !== correctAnswer) {
+        console.log("incorrect");
+        // once timer is created with setInterval the code for subtracting time on incorrect should go here
+    }
 }
