@@ -117,7 +117,7 @@ function answerSelected(answer){
         // once timer is created with setInterval the code for subtracting time on incorrect should go here
     }
 }
-
+// need help below
 function beginTimer(time) {
      counting = setInterval(timer, 1000);
      function timer() {
