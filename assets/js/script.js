@@ -42,10 +42,28 @@ var questions = [
     },    
     {
         number: 4,
-        question: ""
+        question: "What is a psuedoclass in CSS?",
+        answer: "A keyword added to a selector that specifies a special state of the selected element",
+        options: [
+            "A keyword added to a selector that lets you style a specific part of the selected element",
+            "It's a fake class",
+            "A keyword added to a selector that specifies a special state of the selected element",
+            "I don't know"
+        ]
 
     },
-]
+    {
+        number: 5,
+        question: "What is JavaScript used for?",
+        answer: "It is a programming language that is used to dictate web page behavior, among other things, and is the primary client-side scripting language",
+        options: [
+            "It is a programming language that is used to dictate web page behavior, among other things, and is the primary client-side scripting language",
+            "I don't know, is it the same thing as Java?",
+            "It is the basic markup language of the web",
+            "It is used to style HTML elements"
+        ]
+    }
+];
 
 // conditional for if begin quiz button is selected
 
