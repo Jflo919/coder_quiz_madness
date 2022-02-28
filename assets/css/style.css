@@ -39,6 +39,14 @@ body {
     height: 400px;
     padding-bottom: 20px; 
     margin-bottom: 20px;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.quiz.active {
+    opacity: 1;
+    pointer-events: auto;
+    z-index: 5;
 }
 
 .quiz .timer {
