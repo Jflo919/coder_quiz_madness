@@ -173,9 +173,17 @@ function beginTimer() {
       window.alert(yourName + " Your score for this session is " + score);
       var headerEl = document.getElementById('main-heading');
       var listEl = document.getElementById('rules');
-      var listItemEl = document.getElementsByClassName('list-item');
-      headerEl.innerHTML = ("High Scores");
-      return headerEl;
+      listEl.replaceChildren("");
+      var listItemEl = document.createElement("li");
+      listItemEl.textContent = " " + yourName + " " +  "scored" + " " + score;
+      listEl.appendChild(listItemEl);
+      localStorage.setItem()
+
+      
+      
+      headerEl.innerHTML = ("Recent Scores");
+      return headerEl + listEl;
+      
       //use set and get local storage to save initials and score and have them loaded again at the end when the quiz is played again.
       
   }            
