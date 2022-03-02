@@ -63,12 +63,18 @@ var questions = [
             "It is the basic markup language of the web",
             "It is used to style HTML elements"
         ]
+    },
+    {
+        number: 6,
+        question: "Congratulations you won",
+        answer: "",
+        options: ""
     }
 ];
 
 // conditional for if begin quiz button is selected
 
-beginBtn.onclick = ()=>{
+var start = beginBtn.onclick = ()=>{
     // Displays hiddent quiz on click
     quiz.classList.add("active");
     displayQuestions(0);
@@ -115,7 +121,8 @@ function answerSelected(answer){
     if (userAnswer !== correctAnswer) {
         console.log("incorrect");
         // update timer - 5 seconds
-        
+        updateTimeUI(-10);
+        window.alert("incorrect answer, 10 seconds deducted from timer!");
     }
 }
 
@@ -131,6 +138,19 @@ function beginTimer() {
      intervalId = setInterval(function () {
         updateTimeUI(-1);
         // ensure if it's 0 or less, it stops and displays game over
+        if (currentTime <= 0) {
+            clearInterval(intervalId);
+            window.alert("Game Over, you lose!");
+            // refreshes page upon losing
+            onclick = window.location.reload(true);
+
+        }
+        if (questionNumber === 5) {
+            clearInterval(intervalId);
+            window.prompt("congratulations, you won! Please enter your initials");
+            // capture initials, use dom manipulation to add user input as string + current time as score to page somewhere
+            //use set and get local storage to save initials and score and have
+        }
 
      }, 1000);
      
