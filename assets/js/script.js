@@ -72,11 +72,11 @@ beginBtn.onclick = ()=>{
     // Displays hiddent quiz on click
     quiz.classList.add("active");
     displayQuestions(0);
-    beginTimer(60);
+    beginTimer();
 }
 
 var questionNumber = 0;
-var counting;
+
 // when an answer option is clicked on
 var next = quiz.querySelector(".answer-list");
 next.onclick = ()=>{
@@ -114,14 +114,26 @@ function answerSelected(answer){
     }
     if (userAnswer !== correctAnswer) {
         console.log("incorrect");
-        // once timer is created with setInterval the code for subtracting time on incorrect should go here
+        // update timer - 5 seconds
+        
     }
 }
-// need help below
-function beginTimer(time) {
-     counting = setInterval(timer, 1000);
-     function timer() {
-         time = 60;
-         time--;
-     }
+
+var intervalId;
+var currentTime = 60;
+
+function updateTimeUI(timeDelta) {
+    currentTime += timeDelta;
+    document.getElementById('seconds').innerText = currentTime;
 }
+
+function beginTimer() {
+     intervalId = setInterval(function () {
+        updateTimeUI(-1);
+        // ensure if it's 0 or less, it stops and displays game over
+
+     }, 1000);
+     
+         
+    };     
+     
