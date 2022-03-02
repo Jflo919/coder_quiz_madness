@@ -120,7 +120,7 @@ function answerSelected(answer){
     }
     if (userAnswer !== correctAnswer) {
         console.log("incorrect");
-        // update timer - 5 seconds
+        // update timer - 10 seconds
         updateTimeUI(-10);
         window.alert("incorrect answer, 10 seconds deducted from timer!");
     }
@@ -147,13 +147,23 @@ function beginTimer() {
         }
         if (questionNumber === 5) {
             clearInterval(intervalId);
-            window.prompt("congratulations, you won! Please enter your initials");
+            var yourName = window.prompt("Congratulations, You Won! Please enter your initials.");
             // capture initials, use dom manipulation to add user input as string + current time as score to page somewhere
-            //use set and get local storage to save initials and score and have
+            var score = currentTime;
+            console.log(score);
+            console.log(yourName);
+            highScores(score, yourName);
+        
+             
+            //use set and get local storage to save initials and score and have them loaded again at the end when the quiz is played again.
         }
 
      }, 1000);
      
-         
-    };     
+  function highScores(score , yourName) {
+      console.log(yourName + "Your score for this session is " + score);
+  }            
+    
+};     
      
+    
