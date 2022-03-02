@@ -67,8 +67,13 @@ var questions = [
     {
         number: 6,
         question: "Congratulations you won",
-        answer: "",
-        options: ""
+        answer: "You Won!",
+        options: [
+            "You Won!",
+            "You Won!",
+            "You Won!",
+            "Scroll Up to look at list of highscores"
+        ] 
     }
 ];
 
@@ -147,7 +152,11 @@ function beginTimer() {
         }
         if (questionNumber === 5) {
             clearInterval(intervalId);
-            var yourName = window.prompt("Congratulations, You Won! Please enter your initials.");
+            var yourName = window.prompt("Congratulations, You Won! Please enter your initials or your first and last name.");
+            if (yourName == "" || yourName == null) {
+                window.alert("You need to enter something");
+            var yourName =  window.prompt("Congratulations, You Won! Please enter your initials or your first and last name."); 
+            }
             // capture initials, use dom manipulation to add user input as string + current time as score to page somewhere
             var score = currentTime;
             console.log(score);
@@ -155,13 +164,20 @@ function beginTimer() {
             highScores(score, yourName);
         
              
-            //use set and get local storage to save initials and score and have them loaded again at the end when the quiz is played again.
-        }
+                    }
 
      }, 1000);
      
   function highScores(score , yourName) {
-      console.log(yourName + "Your score for this session is " + score);
+      console.log(yourName + " Your score for this session is " + score);
+      window.alert(yourName + " Your score for this session is " + score);
+      var headerEl = document.getElementById('main-heading');
+      var listEl = document.getElementById('rules');
+      var listItemEl = document.getElementsByClassName('list-item');
+      headerEl.innerHTML = ("High Scores");
+      return headerEl;
+      //use set and get local storage to save initials and score and have them loaded again at the end when the quiz is played again.
+      
   }            
     
 };     
