@@ -20,10 +20,11 @@ This application is a timed quiz that starts when a button is clicked:
 * JS code needs to be cleaned up a bit.
 * There are few edge cases that I actually controlled for with user input, one example the type of input accepted for the window asking for user's initials.
 * The persistent data is just the previous session's score and initials, in addition to the current session's, there isn't a list of numerous scores that is populated. 
+* After "winning" you need to refresh the page and not press begin quiz button again, it acts wonky.
 
 ### Screenshot
 
 ![Alt text](/assets/images/screenshot.jpg?raw=true "Screenshot")
 
 ### Link
-
+https://jflo919.github.io/coder_quiz_madness/
