@@ -5,7 +5,10 @@ var beginBtn = document.querySelector(".begin-button button");
 var quiz = document.querySelector(".quiz");
 var answerBtn = document.querySelector(".choice");
 var timrCount = quiz.querySelector(".timer .time-text .timer-seconds");
+
 // array and passing the quiz questions, answers/options, etc...
+
+
 var questions = [
     {
         number: 1,
@@ -72,7 +75,7 @@ var questions = [
             "You Won!",
             "You Won!",
             "You Won!",
-            "Scroll Up to look at list of highscores"
+            "Scroll Up to look at the previous session's score on the upper left"
         ] 
     }
 ];
@@ -121,24 +124,24 @@ function answerSelected(answer){
     var userAnswer = answer.textContent;
     var correctAnswer = questions[questionNumber].answer; 
     if (userAnswer == correctAnswer) {
-        console.log("correct");
+       
     }
     if (userAnswer !== correctAnswer) {
-        console.log("incorrect");
+       
         // update timer - 10 seconds
         updateTimeUI(-10);
         window.alert("incorrect answer, 10 seconds deducted from timer!");
     }
 }
 
-var intervalId;
-var currentTime = 60;
+  var intervalId;
+  var currentTime = 60;
 
 function updateTimeUI(timeDelta) {
     currentTime += timeDelta;
     document.getElementById('seconds').innerText = currentTime;
 }
-
+// function to start a timer
 function beginTimer() {
      intervalId = setInterval(function () {
         updateTimeUI(-1);
@@ -159,35 +162,29 @@ function beginTimer() {
             }
             // capture initials, use dom manipulation to add user input as string + current time as score to page somewhere
             var score = currentTime;
-            console.log(score);
-            console.log(yourName);
             highScores(score, yourName);
         
              
-                    }
-
-     }, 1000);
-     
-  function highScores(score , yourName) {
-      console.log(yourName + " Your score for this session is " + score);
-      window.alert(yourName + " Your score for this session is " + score);
-      var headerEl = document.getElementById('main-heading');
-      var listEl = document.getElementById('rules');
-      listEl.replaceChildren("");
-      var listItemEl = document.createElement("li");
-      listItemEl.textContent = " " + yourName + " " +  "scored" + " " + score;
-      listEl.appendChild(listItemEl);
-      localStorage.setItem()
-
-      
-      
-      headerEl.innerHTML = ("Recent Scores");
-      return headerEl + listEl;
-      
-      //use set and get local storage to save initials and score and have them loaded again at the end when the quiz is played again.
-      
-  }            
+           }
+ }, 1000);
     
-};     
-     
+                // store's previous session's score                
+    function highScores(score , yourName) {
+    localStorage.setItem("score" , score);
+    localStorage.setItem("yourname", yourName);
+    renderHighScores();    
+            }            
     
+        };
+    function renderHighScores() {
+    var scoreContainer = document.getElementById('score');
+    var score = localStorage.getItem("score");
+    var yourName = localStorage.getItem("yourname");
+    var scoreEl = document.createElement("li");
+    scoreEl.innerText = yourName + " : " + score;
+    scoreContainer.appendChild(scoreEl);
+ 
+            }
+ 
+     
+            renderHighScores();    
